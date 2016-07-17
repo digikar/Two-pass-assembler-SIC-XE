@@ -1,0 +1,41 @@
+  START  0
+   LDT    #1
+        LDS    #10
+        +JSUB  RDREC
+        +JSUB  WRREC
+  RESW   1
+
+
+
+   CLEAR  A
+   TD     INPUT
+        JEQ    RLOOP
+        RD     INPUT
+        COMPR  A,T
+        JLT    RLOOP
+        COMPR  A,S
+        JGT    RLOOP
+        STA    LENGTH
+        RSUB
+   BYTE   X'F1'
+
+
+
+   LDX    #0
+        LDS    #1
+        LDA    #0
+        LDT    LENGTH
+   TD     OUTPUT
+        JEQ    WLOOP
+        WD     OUTPUT
+        ADDR   S,A
+        STA    VALUE1
+        STS    VALUE2
+        LDA    VALUE2
+        LDS    VALUE1
+        TIXR   T
+        JLT    WLOOP
+  BYTE   X'05'
+  RESW   1
+  RESW   1
+        END    FIRST

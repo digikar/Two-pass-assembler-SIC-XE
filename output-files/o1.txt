@@ -1,0 +1,18 @@
+  START  0
+   LDT    #1
+        LDS    #10
+  RESW   1
+   RESW   1
+   BYTE   X'F1'
+   CLEAR  A
+   TD     INPUT
+        JEQ    RLOOP
+        RD     INPUT
+        COMPR  A,T
+	JLT    RLOOP
+        COMPR  A,S
+        JGT    RLOOP
+        STA    LENGTH
+        RSUB
+	+JSUB  RDREC
+        END    FIRST

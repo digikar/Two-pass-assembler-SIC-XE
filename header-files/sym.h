@@ -1,0 +1,1 @@
+char Name[] = "FORWA";struct sym{char *label;long int val;}; struct sym tab[]={{"FIRST",0},

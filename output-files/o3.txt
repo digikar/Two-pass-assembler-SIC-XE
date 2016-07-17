@@ -1,0 +1,4 @@
+  START  0
+   LDT    #1
+        LDS    #10
+        +JSUB  
