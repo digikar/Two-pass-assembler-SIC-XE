@@ -2,6 +2,7 @@
 Two pass assembler for SIC/XE
 
 It is a two pass assembler which generates machine level code.
+In pass one the lex code generates opcode and second phase generates the object code list file.
 
 Other details about SIC/XE assembler can be found in "System software and compiler design" by Leland Beck.
 
